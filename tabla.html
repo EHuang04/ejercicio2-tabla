@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de Tablas y CSS</title>
+    <link rel="stylesheet" href="estilos.css">
+    
+   <style> /*Estilos de CSS interno*/
+    /*Comentario: estilos basicos de la tabla*/
+    table{
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse; /*Une los bordes*/
+    }
+
+    th,td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+    thead{
+        background-color: lightblue;
+    }
+
+    tfoot{
+        background-color: lightgray;
+    }
+
+    /*Selector de hijo directo*/
+    tbody > tr:hover{
+        background-color: #f2f2f2;
+    }
+
+    /*Selector nth-child*/
+    tbody tr:nth-child(odd){
+    background-color: #e8f4c4;
+    }
+
+    /*Selector de interaccion*/
+    td:hover {
+        background-color: yellow;
+        cursor: pointer;
+    }
+
+    /*Selector de etiqueta*/
+    p{
+        color:green;
+    }
+
+    /*Selector de clase*/
+    .parrafo-clase{
+        color: blue;
+    }
+
+    /*Selector de ID*/
+    #parrafo-id{
+        color: red;
+    }
+
+    /*Selector descendiente*/
+    div p {
+        font-style: italic;
+    }
+
+    /*Caja de Ejemplo*/
+    .caja{
+        margin: 20px;
+        padding: 2em;
+        border: 5px solid black;
+        font-size: 1.5rem;
+        width: 50%;
+        background-color: lightgreen;
+    }
+
+    
+
+   </style> 
+</head>
+<body>
+    <h1>Reporte de Ventas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Categoria</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">Helado</td>
+                <td>Chocolate</td>
+                <td>10</td>
+                <td>$2</td>
+                <td>$20</td>
+            </tr>
+            <tr>
+                <td>Vainilla</td>
+                <td>5</td>
+                <td>$2</td>
+                <td>$10</td>
+            </tr>
+            <tr>
+                <td colspan="2">Paletas de Frutas</td>
+                <td>8</td>
+                <td>$1.5</td>
+                <td>$12</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"> <strong>Total General</strong></td>
+                <td>$42</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <p id = "parrafo-id">Este es un parrafo con ID</p>
+    <p class="parrafo-clase">Este es un parrafo con clase</p>
+    <p>Este es un parrafo con selector de etiqueta</p>
+    <div>
+        <p>Este es un parrafo descendiente</p>
+    </div>
+
+    <div class="caja">Caja de Ejemplo</div>
+    <div style="background-color: red; color: white;">Color por nombre</div>
+    <div style="background-color: rgb(0, 128, 255); color: #fff;">Color RGB</div>
+    <div style="background-color: #ff5733; color: black;">Color HEX</div>
+
+
+</body>
+</html>
